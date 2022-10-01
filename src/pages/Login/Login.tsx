@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import { LoginForm } from "./components";
+import { LoginForm } from './components';
 
 export const Login = () => {
   return (

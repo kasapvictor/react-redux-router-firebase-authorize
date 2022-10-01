@@ -1,5 +1,6 @@
 import { FC, ChangeEvent } from 'react';
 import { useImmer } from 'use-immer';
+import { toast } from 'react-toastify';
 
 import { InitialStateProps, FormProps } from './types';
 
@@ -23,13 +24,14 @@ export const Form: FC<FormProps> = ({ onClick }) => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     onClick(data);
+    toast.success('Hello', { theme: 'dark' });
   };
 
   return (
     <form>
       <label htmlFor="email">
         <p>Email:</p>
-
+        <span className="material-icons">account_circle</span>
         <input
           type="email"
           name="email"

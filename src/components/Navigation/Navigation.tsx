@@ -1,8 +1,11 @@
 import { NavLink } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { useAppDispatch } from '@app/store';
 import { removeUser } from '@app/features';
 import { useAuth } from '@app/hooks';
+
+import { Nav, NavItem } from './styled';
 
 export const Navigation = () => {
   const dispatch = useAppDispatch();
@@ -10,39 +13,34 @@ export const Navigation = () => {
 
   const handleLogOut = () => {
     dispatch(removeUser());
+    toast.success('Goodbye', { theme: 'dark' });
   };
 
   return (
-    <ul className="nav-list">
+    <Nav>
       {!isAuth && (
         <>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/login">
-              Login
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/registration">
-              Registration
-            </NavLink>
-          </li>
+          <NavItem>
+            <NavLink to="/login">Login</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/registration">Registration</NavLink>
+          </NavItem>
         </>
       )}
       {isAuth && (
         <>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/" end>
+          <NavItem>
+            <NavLink to="/" end>
               Home
             </NavLink>
-          </li>
+          </NavItem>
 
-          <li className="nav-item">
-            <button className="button-link button nav-link" onClick={handleLogOut}>
-              Log Out
-            </button>
-          </li>
+          <NavItem>
+            <button onClick={handleLogOut}>Log Out</button>
+          </NavItem>
         </>
       )}
-    </ul>
+    </Nav>
   );
 };

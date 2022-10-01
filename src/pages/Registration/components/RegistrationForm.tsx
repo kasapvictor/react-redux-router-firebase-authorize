@@ -1,11 +1,10 @@
-import { useState } from "react";
-import { Navigate } from "react-router-dom";
-import { Form } from "@app/components";
+import { useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
-import { useAppDispatch } from "@app/store";
-import { setUser } from "@app/features";
+import { Form } from '@app/components';
+import { useAppDispatch } from '@app/store';
+import { setUser } from '@app/features';
 
 interface formDataProps {
   email: string;
@@ -39,7 +38,7 @@ export const RegistrationForm = () => {
     <>
       <Form onClick={handleSubmit} />
       {!!error && <p className="error-text">{error}</p>}
-      {!!!error && isAuth && <Navigate replace to="/" />}
+      {!error && isAuth && <Navigate replace to="/" />}
     </>
   );
 };

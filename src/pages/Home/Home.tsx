@@ -1,5 +1,6 @@
-import { Navigate } from "react-router-dom";
-import { useAuth } from "@app/hooks";
+import { Navigate } from 'react-router-dom';
+
+import { useAuth } from '@app/hooks';
 
 export const Home = () => {
   const auth = useAuth();

@@ -1,4 +1,4 @@
-import { useAppSelector } from "@app/store";
+import { useAppSelector } from '@app/store';
 
 export const useAuth = () => {
   const { email, token, id } = useAppSelector((state) => state.user);

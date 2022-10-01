@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Form } from "@app/components";
-import { Navigate } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
-import { setUser } from "@app/features";
-import { useAppDispatch } from "@app/store";
+import { Form } from '@app/components';
+import { setUser } from '@app/features';
+import { useAppDispatch } from '@app/store';
 
 interface formDataProps {
   email: string;
