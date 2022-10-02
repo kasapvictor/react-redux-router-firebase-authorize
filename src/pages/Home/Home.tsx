@@ -13,13 +13,16 @@ export const Home = () => {
         <div>
           <h1>Home page</h1>
           <p>
-            ID: <code>{auth.id}</code>
+            <strong>ID:</strong> <br />
+            <code>{auth.id}</code>
           </p>
           <p>
-            EMAIL: <code>{auth.email}</code>
+            <strong>EMAIL:</strong> <br />
+            <code>{auth.email}</code>
           </p>
           <p>
-            TOKEN: <code>{auth.token}</code>
+            <strong>TOKEN:</strong> <br />
+            <code>{auth.token}</code>
           </p>
         </div>
       )}

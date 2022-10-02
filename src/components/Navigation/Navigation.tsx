@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { useAppDispatch } from '@app/store';
 import { removeUser } from '@app/features';
 import { useAuth } from '@app/hooks';
+import { Button } from '@app/components';
 
 import { Nav, NavItem } from './styled';
 
@@ -37,7 +38,9 @@ export const Navigation = () => {
           </NavItem>
 
           <NavItem>
-            <button onClick={handleLogOut}>Log Out</button>
+            <Button type="button" onClick={handleLogOut}>
+              Log Out
+            </Button>
           </NavItem>
         </>
       )}

@@ -1,8 +1,10 @@
 import { FC, ChangeEvent } from 'react';
 import { useImmer } from 'use-immer';
-import { toast } from 'react-toastify';
+
+import { Button } from '@app/components';
 
 import { InitialStateProps, FormProps } from './types';
+import { LabelStyles, InputStyled, InputIconStyled, FormStyled } from './styled';
 
 const initialState = (): InitialStateProps => ({
   email: '',
@@ -21,18 +23,15 @@ export const Form: FC<FormProps> = ({ onClick }) => {
     });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     onClick(data);
-    toast.success('Hello', { theme: 'dark' });
   };
 
   return (
-    <form>
-      <label htmlFor="email">
-        <p>Email:</p>
-        <span className="material-icons">account_circle</span>
-        <input
+    <FormStyled>
+      <LabelStyles htmlFor="email">
+        <InputStyled
           type="email"
           name="email"
           placeholder="test@test.io"
@@ -40,11 +39,13 @@ export const Form: FC<FormProps> = ({ onClick }) => {
           value={data.email}
           onChange={handleChangeInput}
         />
-      </label>
+        <InputIconStyled>
+          <span className="material-icons">alternate_email</span>
+        </InputIconStyled>
+      </LabelStyles>
 
-      <label htmlFor="password">
-        <p>Password:</p>
-        <input
+      <LabelStyles htmlFor="password">
+        <InputStyled
           type="password"
           name="password"
           placeholder="Minimum 6 characters"
@@ -52,13 +53,17 @@ export const Form: FC<FormProps> = ({ onClick }) => {
           value={data.password ?? ''}
           onChange={handleChangeInput}
         />
-      </label>
+
+        <InputIconStyled>
+          <span className="material-icons">key</span>
+        </InputIconStyled>
+      </LabelStyles>
 
       <label>
-        <button className="button" onClick={handleSubmit} type="submit">
+        <Button type="submit" onClick={handleSubmit}>
           Send
-        </button>
+        </Button>
       </label>
-    </form>
+    </FormStyled>
   );
 };
