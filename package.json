@@ -2,7 +2,7 @@
   "name": "rect-redux-router-firebase-authorize",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/kasapvictor/react-shop-example-context",
+  "homepage": "https://github.com/kasapvictor/react-redux-router-firebase-authorize",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

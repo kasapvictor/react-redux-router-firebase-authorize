@@ -1,7 +1,7 @@
 ## React shop example
 
 ~~~
-[!] The project uses react-tracked + produce from immer 
+[!] The project uses RTK
 ~~~
 
 ### Links
@@ -19,4 +19,4 @@
 > 4. Notify: toastify 
 > 5. Firebase DB
 
-[Preview](https://kasapvictor.github.io/react-shop-example-local-useImmer)
+[Preview](https://kasapvictor.github.io/react-redux-router-firebase-authorize)
